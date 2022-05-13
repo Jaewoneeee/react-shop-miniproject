@@ -1,0 +1,40 @@
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.logo-img {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-area {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-list li {
+  padding: 20px;
+}
+
+.search-bar {
+  
+  justify-content: flex-end;
+}
+
+.card img:hover {
+  transform:scale(1.1, 1.1);
+  transition: transform.1s;
+  }
+
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
