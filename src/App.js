@@ -8,6 +8,7 @@ import  { Login, ProductAll, ProductDetail } from './page'
 import  NavBar  from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from './routes/PrivateRoute';
+import { useSelector } from 'react-redux'
 
 
 // 1. 전체상품페이지, 로그인, 상품상세페이지
@@ -22,7 +23,8 @@ import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
 
-  const [loginCheck, setLoginCheck] = useState(false) // true면 로그인이됨
+  //const [loginCheck, setLoginCheck] = useState(false) // true면 로그인이됨
+  const loginCheck = useSelector((state) => state.login.loginCheck)
 
   useEffect( () => {
     console.log(loginCheck)
@@ -34,7 +36,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="login" element={<Login loginCheck={setLoginCheck}/>} />
+        <Route path="login" element={<Login/>} />
         <Route path="product/:id" element={<PrivateRoute loginCheck={loginCheck}  />} />
       </Routes>
     </div>
