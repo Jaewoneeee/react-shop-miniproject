@@ -1,5 +1,6 @@
 let initailState = {
-    productList : []
+    productList : [],
+    productDetail : null
 }
 
 function productReducer(state=initailState, action) {
@@ -7,6 +8,10 @@ function productReducer(state=initailState, action) {
     switch (type) {
         case "GET_PRODUCT_SUCCESS" :
             return {...state , productList : payload.data}
+        
+        case "GET_DETAIL_SUCCESS" :
+            return {...state, productDetail : payload.data}
+
         default :
             return { ...state };
     }
